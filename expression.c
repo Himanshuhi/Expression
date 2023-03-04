@@ -62,7 +62,6 @@ double evaluate(char *expr) {
         p++;
     }
     
-    // Evaluate expressions with addition and subtraction last
     p = expr;
     while (*p != '\0') {
         if (*p == '+' || *p == '-') {
@@ -80,7 +79,6 @@ double evaluate(char *expr) {
         p++;
     }
     
-    // If no operators found, return the numeric value of the expression
     return atof(expr);
 }
 
@@ -88,7 +86,7 @@ int main() {
     char expr[MAX_EXPR_LENGTH];
     printf("Enter a math expression: ");
     fgets(expr, MAX_EXPR_LENGTH, stdin);
-    expr[strcspn(expr, "\n")] = '\0'; // Remove trailing newline character
+    expr[strcspn(expr, "\n")] = '\0'; // himanshu
     printf("Result: %.3f\n", evaluate(expr));
     return 0;
 }
